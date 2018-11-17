@@ -5,55 +5,93 @@ $light_gray: #E5E5E5
 $yellow: #FFFF00
 $red: #C94545
 $pink: #EC407A
+
+@mixin transition($seconds)
+  transition: $seconds
+  -moz-transition: $seconds
+  -webkit-transition: $seconds
+  -o-transition: $seconds
+  &:hover
+    transition: $seconds
+    -moz-transition: $seconds
+    -webkit-transition: $seconds
+    -o-transition: $seconds
+
+html
+  a
+    +transition(0.3s)
+  i
+    +transition(0.3s)
+
+.background
+  height: 100%
+  width: 100%
+  z-index: -100
+  position: fixed
+
+.fullScreen
+  width: 100%
+  height: 100vh
+  margin: 0
+  padding: 0
 .clear
   clear: both
 
-.from
-  position: relative
-  padding: 10px 20px
-  border-radius: 15px 15px 15px 0
-  &:before
-    content: ""
-    position: absolute
-    z-index: -1
-    bottom: -2px
-    height: 20px
-    -webkit-transform: translate(0, -2px)
-  &:after
-    content: ""
-    position: absolute
-    bottom: -2px
-    width: 26px
-    height: 20px
-    z-index: 1
-    -webkit-transform: translate(-30px, -2px)
+.chat
+  height: 100%
+  width: 100%
+  display: flex
+  flex-direction: column-reverse
+  .container
+    width: 70%
+  .chatInput
+    width: 100%
+    height: 50px
+    background-color: $light_gray
+    justify-content: center
+    align-items: center
+    display: flex
+    i
+      color: gray
+      margin: 0 20px
+      font-size: 30px
 
-.me
-  color: white
-  background: #0B93F6
-  float: right
-  border-radius: 15px 15px 0 15px
-  &:before
-    right: -7px
-    border-right: 20px solid #0B93F6
-    border-bottom-left-radius: 16px 14px
+    .form-control
+      width: 60%
+      border-radius: 25px
+      &:focus
+        box-shadow: 0 0 0 0
+        border-color: $light_gray
+  .send
+    cursor: pointer
+    &:hover
+      color: $light_green
+  .from
+    position: relative
+    padding: 10px 20px
+    margin-bottom: 10px
+    border-radius: 15px
+    max-width: 40%
+    word-wrap: break-word
+    .author
+      color: $dark_green
+      font-weight: 700
 
-  &:after
-    right: -56px
-    background: white
-    border-bottom-left-radius: 10px
+  .me
+    color: white
+    background: #0B93F6
+    float: right
 
-.them
-  background: #E5E5EA
-  color: black
-  float: left
-  border-radius: 15px 15px 15px 0
-  &:before
-    left: -7px
-    border-left: 20px solid #E5E5EA
-    border-bottom-right-radius: 16px 14px
+  .them
+    background: #ececf6
+    color: black
+    float: left
 
-  &:after
-    left: 4px
-    background: white
-    border-bottom-right-radius: 10px
+#main
+  #main_backgroundImage
+    background: url('../images/background/main.jpg')
+    background-size: cover
+  #main_backgroundColor
+    background-color: $black
+    z-index: -90
+    opacity: 0.6

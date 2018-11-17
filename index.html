@@ -3,20 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Зюраткуль | В процессе</title>
-    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"-->
-    <!--integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="frameworks/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-<div id="main">
-    <div class="container">
-        <message v-for="item in messages"
-                 :key="item.id"
-                 :text="item.text"
-                 :sender="item.sender"
-        >
-        </message>
+<div class="fullScreen" id="main">
+    <div id="main_backgroundColor" class="background"></div>
+    <div id="main_backgroundImage" class="background"></div>
+    <div class="chat">
+        <div class="chatInput">
+
+            <i class="fa fa-grin"></i> <!--TODO: Make smiles menu-->
+            <input v-model="text" class="form-control" type="text" placeholder="Введите сообщение...">
+            <i id="main_send" v-on:click="sendMessage" class="send fa fa-angle-double-right "></i>
+        </div>
+
+        <div class="container">
+            <message v-for="item in messages"
+                     :key="item.id"
+                     :text="item.text"
+                     :sender="item.sender"
+                     :author="item.author"
+            >
+            </message>
+        </div>
+
     </div>
 </div>
 
@@ -26,6 +39,7 @@
 <script type="text/javascript" src="frameworks/bootstrap/bootstrap.min.js"></script>
 <!--<script type="text/javascript" src="frameworks/vue_js/vue.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/editMainBackgroundSize.js"></script>
 <script type="text/javascript" src="js/messages.js"></script>
 </body>
 </html>
