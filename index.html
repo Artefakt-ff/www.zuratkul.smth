@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Зюраткуль | В процессе</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/hover-min.css">
     <link rel="stylesheet" type="text/css" href="frameworks/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body>
+<!--<div id="substrate"></div>-->
+<body id="body">
+
 <div class="fullScreen" id="main">
     <div id="main_backgroundColor" class="background"></div>
     <div id="main_backgroundImage" class="background"></div>
     <div class="chat">
         <div class="chatInput">
-
             <i class="fa fa-grin"></i> <!--TODO: Make smiles menu-->
             <input v-model="text" class="form-control" type="text" placeholder="Введите сообщение...">
             <i id="main_send" v-on:click="sendMessage" class="send fa fa-angle-double-right "></i>
@@ -32,14 +34,34 @@
 
     </div>
 </div>
+<div id="another">
+    <div class="container-fluid" id="menu">
+        <div id="menu_logo" class="hvr-buzz"><img src="images/logo.png"></div>
+        <div class="container">
+            <div class="menu_item"><a href="#" class="link-hover-center">о походе</a></div>
+            <div class="separator">|</div>
+            <div class="menu_item"><a href="#" class="link-hover-center">почему</a></div>
+            <div class="separator">|</div>
+            <div class="menu_item"><a href="#" class="link-hover-center">куда</a></div>
+            <div class="separator">|</div>
+            <div class="menu_item"><a href="#" class="link-hover-center">когда</a></div>
+            <div class="separator">|</div>
+            <div class="menu_item"><a href="#" class="link-hover-center">как</a></div>
+            <div class="separator">|</div>
+            <div class="menu_item"><a href="#" class="link-hover-center">с кем</a></div>
+        </div>
+        <a href="#">
+            <div id="i_will_go_btn" class="hvr-pop">ПОЙДУ</div>
+        </a>
+    </div>
 
-
+    <div id="information"></div>
+</div>
 <script type="text/javascript" src="frameworks/jquery_js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="frameworks/popper_js/popper.min.js"></script>
 <script type="text/javascript" src="frameworks/bootstrap/bootstrap.min.js"></script>
 <!--<script type="text/javascript" src="frameworks/vue_js/vue.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="js/editMainBackgroundSize.js"></script>
 <script type="text/javascript" src="js/messages.js"></script>
 </body>
 </html>

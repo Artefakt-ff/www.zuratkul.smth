@@ -1,0 +1,70 @@
+@mixin shadow
+  -webkit-box-shadow: 0 4px 0 0 $light_gray
+  -moz-box-shadow: 0 4px 0 0 $light_gray
+  box-shadow: 0 4px 0 0 $light_gray
+
+#menu
+  display: flex
+  align-items: center
+  justify-content: space-around
+  font-family: "Helvetica Neue", cursive
+  font-size: 20px
+  font-weight: 900
+  height: 75px
+  background-color: white
+  padding: 0 10%
+  position: fixed
+  +shadow
+  #menu_logo
+    img
+      height: 50px
+  .container
+    width: 50%
+    display: flex
+    justify-content: space-around
+    .menu_item
+      display: inline-block
+  #i_will_go_btn
+    color: white
+    background-color: $dark_green
+    display: flex
+    width: 100px
+    height: 40px
+    border-radius: 20px
+    font-size: 16px
+    justify-content: center
+    align-items: center
+
+.link-hover-center
+  display: inline-block
+  color: $black
+  line-height: 1
+  text-decoration: none
+  cursor: pointer
+  position: relative
+  padding-bottom: 2px
+  &:hover
+    color: $dark_green
+    text-decoration: none
+  &:after
+
+    display: block
+    content: ""
+    background-color: $dark_green
+    height: 1px
+    width: 0
+    left: 50%
+    bottom: -2px
+    position: absolute
+    -webkit-transition: width .3s ease-in-out
+    -moz-transition: width .3s ease-in-out
+    transition: width .3s ease-in-out
+    -webkit-transform: translateX(-50%)
+    -moz-transform: translateX(-50%)
+    transform: translateX(-50%)
+  &:hover
+    &:after
+      width: 100%
+  &:focus
+    &:after
+      width: 100%

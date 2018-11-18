@@ -1,0 +1,75 @@
+$dark_green: #3D8B64
+$light_green: #00964F
+$black: #1A1A1A
+$light_gray: #E5E5E5
+$yellow: #FFFF00
+$red: #C94545
+$pink: #EC407A
+
+@font-face
+  font-family: "Code Pro"
+  src: url("../fonts/code-pro-bold/original-code-pro-bold.otf")
+  src: url("../fonts/code-pro-bold/code-pro-bold.eot")
+  src: url("../fonts/code-pro-bold/code-pro-bold.svg")
+  src: url("../fonts/code-pro-bold/code-pro-bold.ttf")
+  src: url("../fonts/code-pro-bold/code-pro-bold.woff")
+  src: url("../fonts/code-pro-bold/code-pro-bold.woff2")
+
+@font-face
+  font-family: "Helvetica Neue"
+  src: url("../fonts/helvetica/original-helvetica-neue-cyr.otf")
+  src: url("../fonts/helvetica/helvetica-neue-cyr.eot")
+  src: url("../fonts/helvetica/helvetica-neue-cyr.svg")
+  src: url("../fonts/helvetica/helvetica-neue-cyr.ttf")
+  src: url("../fonts/helvetica/helvetica-neue-cyr.woff")
+  src: url("../fonts/helvetica/helvetica-neue-cyr.woff2")
+
+@mixin transition($seconds)
+  transition: $seconds
+  -moz-transition: $seconds
+  -webkit-transition: $seconds
+  -o-transition: $seconds
+  &:hover
+    transition: $seconds
+    -moz-transition: $seconds
+    -webkit-transition: $seconds
+    -o-transition: $seconds
+
+html
+  a
+    outline: none
+    +transition(0.3s)
+    &:hover, &:focus, &:visited, &:active
+      text-decoration: none
+      outline: none
+  i
+    +transition(0.3s)
+
+#substrate
+  width: 100%
+  height: 100vh
+  z-index: -10000
+  background-color: $dark_green
+  position: absolute
+
+.background
+  height: 100%
+  width: 100%
+  z-index: -100
+  position: fixed
+
+.fullScreen
+  width: 100%
+  height: 100vh
+  margin: 0
+  padding: 0
+  display: flex
+
+.clear
+  clear: both
+
+#information
+  height: 200vh
+  background: url('../images/background/main.jpg')
+  background-size: cover
+

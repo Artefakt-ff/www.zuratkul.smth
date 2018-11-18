@@ -1,93 +1,10 @@
-$dark_green: #3D8B64
-$light_green: #00964F
-$black: #1A1A1A
-$light_gray: #E5E5E5
-$yellow: #FFFF00
-$red: #C94545
-$pink: #EC407A
+@import 'default'
+@import 'chat'
+@import 'menu'
 
-@mixin transition($seconds)
-  transition: $seconds
-  -moz-transition: $seconds
-  -webkit-transition: $seconds
-  -o-transition: $seconds
-  &:hover
-    transition: $seconds
-    -moz-transition: $seconds
-    -webkit-transition: $seconds
-    -o-transition: $seconds
-
-html
-  a
-    +transition(0.3s)
-  i
-    +transition(0.3s)
-
-.background
-  height: 100%
-  width: 100%
-  z-index: -100
-  position: fixed
-
-.fullScreen
-  width: 100%
-  height: 100vh
-  margin: 0
-  padding: 0
-.clear
-  clear: both
-
-.chat
-  height: 100%
-  width: 100%
-  display: flex
-  flex-direction: column-reverse
-  .container
-    width: 70%
-  .chatInput
-    width: 100%
-    height: 50px
-    background-color: $light_gray
-    justify-content: center
-    align-items: center
-    display: flex
-    i
-      color: gray
-      margin: 0 20px
-      font-size: 30px
-
-    .form-control
-      width: 60%
-      border-radius: 25px
-      &:focus
-        box-shadow: 0 0 0 0
-        border-color: $light_gray
-  .send
-    cursor: pointer
-    &:hover
-      color: $light_green
-  .from
-    position: relative
-    padding: 10px 20px
-    margin-bottom: 10px
-    border-radius: 15px
-    max-width: 40%
-    word-wrap: break-word
-    .author
-      color: $dark_green
-      font-weight: 700
-
-  .me
-    color: white
-    background: #0B93F6
-    float: right
-
-  .them
-    background: #ececf6
-    color: black
-    float: left
 
 #main
+  //display: none
   #main_backgroundImage
     background: url('../images/background/main.jpg')
     background-size: cover
@@ -95,3 +12,6 @@ html
     background-color: $black
     z-index: -90
     opacity: 0.6
+
+#another
+  display: none
