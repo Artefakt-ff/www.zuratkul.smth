@@ -1,5 +1,5 @@
 $dark_green: #3D8B64
-$light_green: #00964F
+$light_green: #67c297
 $black: #1A1A1A
 $light_gray: #E5E5E5
 $yellow: #FFFF00
@@ -24,6 +24,9 @@ $pink: #EC407A
   src: url("../fonts/helvetica/helvetica-neue-cyr.woff")
   src: url("../fonts/helvetica/helvetica-neue-cyr.woff2")
 
+@import url('https://fonts.googleapis.com/css?family=Istok+Web')
+@import url('https://fonts.googleapis.com/css?family=Anton')
+
 @mixin transition($seconds)
   transition: $seconds
   -moz-transition: $seconds
@@ -36,6 +39,8 @@ $pink: #EC407A
     -o-transition: $seconds
 
 html
+  body, h1, h2, h3, h4, h5, h6, p, span
+    font-family: "Istok Web", sans-serif
   a
     outline: none
     +transition(0.3s)
@@ -68,8 +73,23 @@ html
 .clear
   clear: both
 
-#information
-  height: 200vh
-  background: url('../images/background/main.jpg')
-  background-size: cover
+.crop
+  float: left
+  overflow: hidden
+/* this is important */
+
+/* input values to crop the image: top, right, bottom, left */
+.crop img
+  margin: -41px -156px -40px -30px
+
+.solid_background
+  position: absolute
+  display: flex
+  width: 100%
+  height: 100%
+  background-color: $light_green
+  opacity: 0.3
+  z-index: 0
+
+
 
